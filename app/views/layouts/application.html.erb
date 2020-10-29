@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FlightBooker</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>FlightBooker</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<nav class="navbar is-primary">
+  <div class="navbar-brand">
+    <h2 class="title is-2" id='logo'>Flight Booker</h2>
+  </div>
+</nav>
+
+
+  <% if flash[:notice] %>
+    <div class="notification is-primary is-light">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div class="notification is-danger is-light">
+      <p class="notice"><%= alert %></p>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</body>
+
 </html>
