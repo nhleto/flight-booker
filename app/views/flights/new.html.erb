@@ -1,0 +1,15 @@
+<div class="section">
+  <div class="box has-text-centered">
+    <h2 class="title is-2">Search for your Flights:</h2>
+  </div>
+
+  <%= simple_form_for(@flight) do |f| %>
+    <div class="field">
+      <div class="control">
+        <%= f.input :name %>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
