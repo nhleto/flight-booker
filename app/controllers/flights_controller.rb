@@ -1,9 +1,6 @@
 class FlightsController < ApplicationController
   def index
-    @flight = Flight.all
-  end
-
-  def show
-    @flight = Flight.find(params[:id])
+    @flights = Flight.where(from_airport_id: params[:search][:from_airport],
+                            to_airport_id: params[:search][:to_airport], start: params[:search][:date])
   end
 end
