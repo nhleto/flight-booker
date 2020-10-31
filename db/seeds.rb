@@ -26,5 +26,5 @@ def random_hour(from, to)
 end
 
 10.times do
-  Flight.create([{ from_airport_id: Airport.all.sample.id, to_airport_id: Airport.all.sample.id, start: rand_time(2.days.ago), duration: random_hour(1, 7) }])
+  Flight.create({ from_airport_id: Airport.all.sample.id, to_airport_id: Airport.all.sample.id, start: rand_time(2.days.ago), duration: random_hour(1, 7) })
 end
