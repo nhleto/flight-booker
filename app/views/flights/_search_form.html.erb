@@ -1,7 +1,7 @@
   <div class="columns is-centered">
     <div class='column is-half'>
       <div class="container">
-        <div class="FLEX", id='banner'>
+        <div class="FLEX" id='banner'>
           <span class='mb-3'>
             <h4 class="title is-4">From</h4>
           </span>
@@ -14,7 +14,7 @@
           <% @flights.each do |flight| %>
           <li>
             <div class="hash">
-              <div class="box mb-3" , id='hash'>
+              <div class="box mb-3" id='hash'>
                 <div class='FLEX'>
                   <span>
                     <h5 class="title is-5"><%= flight.from_airport.name %></h5>
@@ -26,7 +26,7 @@
                 </div>
               </div>
               <div class="center-button">
-                <button class="button is-primary is-light">Select</button>
+                <button class="button is-primary is-light" id='button'>Select</button>
               </div>
 
             </div>
