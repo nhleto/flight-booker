@@ -11,7 +11,7 @@
         </div>
         <% if @flights.present? %>
         <ol>
-          <%= simple_form_for(:booking, url: '/bookings/new', method: :get) do |f|%>
+          <%= simple_form_for(:booking, url: '/bookings/new', method: :get) do |f| %>
             <% @flights.each do |flight| %>
             <li>
               <div class="hash">
