@@ -1,0 +1,39 @@
+  <div class="columns is-centered">
+    <div class='column is-half'>
+      <div class="container">
+        <div class="FLEX", id='banner'>
+          <span class='mb-3'>
+            <h4 class="title is-4">From</h4>
+          </span>
+          <span>
+            <h4 class="title is-4">To</h4>
+          </span>
+        </div>
+        <% if @flights.present? %>
+        <ol>
+          <% @flights.each do |flight| %>
+          <li>
+            <div class="hash">
+              <div class="box mb-3" , id='hash'>
+                <div class='FLEX'>
+                  <span>
+                    <h5 class="title is-5"><%= flight.from_airport.name %></h5>
+                  </span>
+                  <strong>--></strong>
+                  <span>
+                    <h5 class="title is-5"><%= flight.to_airport.name %></h5>
+                  </span>
+                </div>
+              </div>
+              <div class="center-button">
+                <button class="button is-primary is-light">Select</button>
+              </div>
+
+            </div>
+          </li>
+
+          <% end %>
+        </ol>
+        <% end %>
+      </div>
+    </div>

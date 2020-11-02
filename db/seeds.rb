@@ -25,6 +25,8 @@ def random_hour(from, to)
   (Date.today + rand(from..to).hour + rand(0..60).minutes).to_datetime
 end
 
-10.times do
+100.times do
   Flight.create({ from_airport_id: Airport.all.sample.id, to_airport_id: Airport.all.sample.id, start: rand_time(2.days.ago), duration: random_hour(1, 7) })
 end
+
+Flight.where('from_airport_id = to_airport_id').delete_all
