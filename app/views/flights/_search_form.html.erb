@@ -11,26 +11,34 @@
         </div>
         <% if @flights.present? %>
         <ol>
-          <% @flights.each do |flight| %>
-          <li>
-            <div class="hash">
-              <div class="box mb-3" id='hash'>
-                <div class='FLEX'>
-                  <span>
-                    <h5 class="title is-5"><%= flight.from_airport.name %></h5>
-                  </span>
-                  <strong>--></strong>
-                  <span>
-                    <h5 class="title is-5"><%= flight.to_airport.name %></h5>
-                  </span>
+          <%= simple_form_for(:booking, url: '/bookings/new', method: :get) do |f|%>
+            <% @flights.each do |flight| %>
+            <li>
+              <div class="hash">
+                <div class="box mb-3" id='hash'>
+                  <div class='FLEX'>
+                    <span>
+                      <h5 class="title is-5"><%= flight.from_airport.name %></h5>
+                    </span>
+                    <strong>--></strong>
+                    <span>
+                      <h5 class="title is-5"><%= flight.to_airport.name %></h5>
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div class="center-button">
-                <button class="button is-primary is-light" id='button'>Select</button>
-              </div>
 
-            </div>
-          </li>
+
+                <%= f.hidden_field :number_of_passengers, value: params[:search][:number_of_passengers] %>
+
+                <%= f.radio_button 'flight_id', flight.id %>
+
+              </div>
+            </li>
+            <% end %>
+
+          <div>
+            <%= f.submit 'Book', class: 'button is-primary', id: 'button' %>
+          </div>
 
           <% end %>
         </ol>
