@@ -1,0 +1,21 @@
+  <div class="section">
+    <div class="columns is-centered">
+      <table class="table is-bordered has-text-centered">
+        <thead>
+          <tr>
+            <th>Departing Airport</th>
+            <th>Arriving Airport</th>
+            <th>Number of Passengers</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td><%= @flight.from_airport.name %></td>
+          <td><%= @flight.to_airport.name %></td>
+          <td><%= params[:booking][:number_of_passengers] %></td>
+          <td><%= @flight.start.to_date %></td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

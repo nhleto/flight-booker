@@ -58,6 +58,8 @@
     </div>
   </div>
 
-  <%= render 'search_form' %>
+  <% if params[:search] %>
+    <%= render 'search_form' %>
+  <% end %>
   
   </div>
