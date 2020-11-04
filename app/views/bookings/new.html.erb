@@ -53,6 +53,9 @@
             </div>
           <% end %>
 
+        <%= f.hidden_field :flight_id, value: params[:booking][:flight_id] %>
+        <%= f.hidden_field :number_of_passengers, value: params[:booking][:number_of_passengers] %>
+
         <div class="has-text-centered">
           <% if @flight.present? %>
             <%= f.submit class: 'button is-primary' %>
