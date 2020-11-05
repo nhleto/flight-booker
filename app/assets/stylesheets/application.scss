@@ -41,4 +41,34 @@
 
  #button{
   width: 96.3%;
+  background-color: #E76F51;
+  color: white;
+  border: transparent;
+ }
+
+ .body {
+   background-color: #264653;
+ }
+
+ .title.is-2, .title.is-3, .title.is-4, .select.required.label, .select.label {
+   color: #E9C46A;
+ }
+
+ .navbar{
+   background-color: #E76F51;
+ }
+
+ input[type="submit"]{
+   background-color: #E76F51;
+   color: white;
+   border: transparent;
+ }
+
+ li{
+   color:#E9C46A;
+ }
+
+ #logo-text{
+   font-family: lobster;
+   color: #264653;
  }

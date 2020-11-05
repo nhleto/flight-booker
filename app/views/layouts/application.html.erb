@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class='body'>
 
 <head>
   <title>FlightBooker</title>
@@ -7,20 +7,23 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 
-<nav class="navbar is-primary">
-  <div class="navbar-brand">
-    <h2 class="title is-2" id='logo'>Flight Booker</h2>
-  </div>
-</nav>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <%= image_tag  "flight2.png", size: '64x64', alt: 'flight logo'  %>
+      <div class="navbar-item"><h3 class="title is-3" id = 'logo-text'>Flight Booker</h3></div>
+    </div>
+  </nav>
 
 
   <% if flash[:notice] %>
     <div class="notification is-primary is-light">
+      <button class="delete"></button>
       <p class="notice"><%= notice %></p>
     </div>
   <% end %>

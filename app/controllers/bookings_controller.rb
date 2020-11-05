@@ -13,13 +13,16 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     if @booking.save
       flash[:notice] = 'Booking successfully saved'
-      redirect_to root_path
+      redirect_to booking_path(@booking)
     else
       flash[:alert] = 'Booking failed to save...'
       render 'new'
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
   private
 
   def booking_params
