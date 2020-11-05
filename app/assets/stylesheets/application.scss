@@ -27,20 +27,20 @@
 
  .hash{
    display: inline-flex;
-   width: 100%;
+   width: 80%;
  }
 
  #hash{
-   width: 100%;
+   width: 96%;
    margin-right: 20px;
  }
 
- #banner{
-   width: 95%;
- }
+//  #banner{
+//    width: 95%;
+//  }
 
  #button{
-  width: 96.3%;
+  width: 73%;
   background-color: #E76F51;
   color: white;
   border: transparent;
@@ -71,4 +71,8 @@
  #logo-text{
    font-family: lobster;
    color: #264653;
+ }
+
+ #radio{
+   display: flex;
  }

@@ -1,6 +1,8 @@
   <div class="columns is-centered">
-    <div class='column is-half'>
-      <div class="container">
+    <div class='column is-half has-text-centered'>
+      <%
+=begin%>
+ <div class="container">
         <div class="FLEX" id='banner'>
           <span class='mb-3'>
             <h4 class="title is-4">From</h4>
@@ -8,15 +10,21 @@
           <span>
             <h4 class="title is-4">To</h4>
           </span>
-        </div>
+        </div> 
+<%
+=end%>
         <% if @flights.present? %>
-        <ol>
+        <ul>
           <%= simple_form_for(:booking, url: '/bookings/new', method: :get) do |f| %>
+
           <% @flights.each do |flight| %>
-          <li>
+          
             <div class="hash">
+              <div class='has-text-white'>Flight <u><%= flight.id %></u></div>
+
               <div class="box mb-3" id='hash'>
                 <div class='FLEX'>
+
                   <span>
                     <h5 class="title is-5"><%= flight.from_airport.name %></h5>
                   </span>
@@ -30,7 +38,7 @@
 
               <%= f.hidden_field :number_of_passengers, value: params[:search][:number_of_passengers] %>
 
-              <div class='has-text-centered'>
+              <div class='has-text-centered' id = 'radio'>
                 <%= f.radio_button 'flight_id', flight.id %>
               </div>
 
@@ -43,7 +51,7 @@
           </div>
 
           <% end %>
-        </ol>
+          </ul>
         <% end %>
       </div>
     </div>
