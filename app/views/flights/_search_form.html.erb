@@ -20,7 +20,7 @@
           <% @flights.each do |flight| %>
           
             <div class="hash">
-              <div class='has-text-white'>Flight <u><%= flight.id %></u></div>
+              <div class='has-text-white'><span class='logo-item'>Flight </span><u class = 'flight-id'><%= flight.id %></u></div>
 
               <div class="box mb-3" id='hash'>
                 <div class='FLEX'>
@@ -46,8 +46,8 @@
           </li>
           <% end %>
 
-          <div>
-            <%= f.submit 'Book', class: 'button', id: 'button' %>
+          <div class='has-text-centered'>
+            <%= f.submit 'Book', class: 'button is-medium', id: 'button' %>
           </div>
 
           <% end %>

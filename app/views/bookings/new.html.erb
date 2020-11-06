@@ -1,6 +1,6 @@
 <div class="section">
   <div class="has-text-centered">
-    <h2 class="title is-2">Booking information:</h2>
+    <h2 class="title is-2"><u>Booking information:</u></h2>
   </div>
 
   <% if @flight.nil? %>
@@ -10,7 +10,7 @@
   <% end %>
 
   <div class="has-text-centered mb-5">
-    <h3 class="title is-3">Passenger Information</h3>
+    <h3 class="title is-3"><u>Passenger Information</u></h3>
   </div>
 
   <div class="columns is-centered">
@@ -58,7 +58,7 @@
 
         <div class="has-text-centered">
           <% if @flight.present? %>
-            <%= f.submit class: 'button is-primary' %>
+            <%= f.submit class: 'button', id: 'button' %>
           <% end %>
         </div>
         

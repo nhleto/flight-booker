@@ -31,7 +31,7 @@
  }
 
  #hash{
-   width: 96%;
+   width: 100%;
    margin-right: 20px;
  }
 
@@ -40,7 +40,6 @@
 //  }
 
  #button{
-  width: 73%;
   background-color: #E76F51;
   color: white;
   border: transparent;
@@ -75,4 +74,12 @@
 
  #radio{
    display: flex;
+ }
+
+ .logo-item{
+   color: #E9C46A;
+ }
+
+ .flight-id{
+   color: #E9C46A ;
  }
