@@ -22,15 +22,9 @@
           <%= @booking.errors.full_messages.first if @booking.errors.any? %>
         </div>
 
-          <% params[:booking][:number_of_passengers].to_i.times do |i| %>
-
-            <div class="has-text-centered mb-4">
-              <h4 class="title is-4">Passenger #<%= i + 1 %></h4>
-            </div>
-
-            <div class="box">
             <%= f.simple_fields_for :passengers do |passenger| %>
 
+            <div class="box">
               <div class="field">
                 <div class="control">
                   <%= passenger.input :name,
@@ -48,9 +42,8 @@
                           input_html: { class: 'input' } %>
                 </div>
               </div>
-
-            <% end %>
             </div>
+
           <% end %>
 
         <%= f.hidden_field :flight_id, value: params[:booking][:flight_id] %>

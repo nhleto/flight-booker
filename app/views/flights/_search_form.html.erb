@@ -1,57 +1,52 @@
-  <div class="columns is-centered">
-    <div class='column is-half has-text-centered'>
-      <%
-=begin%>
- <div class="container">
-        <div class="FLEX" id='banner'>
-          <span class='mb-3'>
-            <h4 class="title is-4">From</h4>
-          </span>
-          <span>
-            <h4 class="title is-4">To</h4>
-          </span>
-        </div> 
-<%
-=end%>
-        <% if @flights.present? %>
-        <ul>
-          <%= simple_form_for(:booking, url: '/bookings/new', method: :get) do |f| %>
+  <div class="columns is-centered has-text-centered">
+    <div class='column is-half'>
+      <% if @flights.present? %>
+      <ul>
+        <%= simple_form_for(:booking, url: '/bookings/new', method: :get) do |f| %>
 
-          <% @flights.each do |flight| %>
-          
-            <div class="hash">
-              <div class='has-text-white'><span class='logo-item'>Flight </span><u class = 'flight-id'><%= flight.id %></u></div>
+        <% @flights.each do |flight| %>
 
-              <div class="box mb-3" id='hash'>
-                <div class='FLEX'>
-
-                  <span>
-                    <h5 class="title is-5"><%= flight.from_airport.name %></h5>
-                  </span>
-                  <strong>--></strong>
-                  <span>
-                    <h5 class="title is-5"><%= flight.to_airport.name %></h5>
-                  </span>
-                </div>
-              </div>
-
-
-              <%= f.hidden_field :number_of_passengers, value: params[:search][:number_of_passengers] %>
-
-              <div class='has-text-centered' id = 'radio'>
-                <%= f.radio_button 'flight_id', flight.id %>
-              </div>
-
-            </div>
-          </li>
-          <% end %>
-
-          <div class='has-text-centered'>
-            <%= f.submit 'Book', class: 'button is-medium', id: 'button' %>
+        <div class="hash">
+          <div class='has-text-white' style="margin-top: auto;margin-bottom: auto;">
+            <span class='logo-item'>Flight </span><u class='flight-id'><%= flight.id %></u>
           </div>
 
-          <% end %>
-          </ul>
+          <div class="box mb-3" id='hash'>
+            <div class="columns" style='display:flex; justify-content:space-between'>
+              <div class="column" style="margin-top: auto;margin-bottom: auto;">
+                <div>
+                <header><u>From----->To</u></header>
+                  <h5 class="title is-5"><%= flight.from_airport.name %> ➣ <%= flight.to_airport.name %></h5>
+                </div>
+              </div>
+              <div class="column">
+                <u>Boarding Time</u>
+                <p><strong><%= flight.start.strftime("%I:%M %p") %></strong></p>
+              </div>
+              <div class="column" style="margin-top: auto;margin-bottom: auto;">
+                <u>Date</u>
+                <p><strong><%= flight.start.strftime("%m/%d/%Y") %></strong></p>
+              </div>
+            </div>
+          </div>
+
+
+          <%= f.hidden_field :number_of_passengers, value: params[:search][:number_of_passengers] %>
+
+          <div class='has-text-centered' id='radio'>
+            <%= f.radio_button 'flight_id', flight.id %>
+          </div>
+
+        </div>
+        </li>
         <% end %>
-      </div>
+
+        <div class='has-text-centered'>
+          <%= f.submit 'Book', class: 'button is-medium', id: 'button' %>
+        </div>
+
+        <% end %>
+      </ul>
+      <% end %>
     </div>
+  </div>
