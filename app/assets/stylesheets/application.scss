@@ -35,10 +35,6 @@
    margin-right: 20px;
  }
 
-//  #banner{
-//    width: 95%;
-//  }
-
  #button{
   background-color: #E76F51;
   color: white;
@@ -49,7 +45,7 @@
    background-color: #264653;
  }
 
- .title.is-2, .title.is-3, .title.is-4, .select.required.label, .select.label {
+ .title, .select.required.label, .select.label {
    color: #E9C46A;
  }
 
@@ -73,7 +69,7 @@
  }
 
  #radio{
-   display: flex;
+   margin:auto;
  }
 
  .logo-item{
@@ -83,3 +79,59 @@
  .flight-id{
    color: #E9C46A ;
  }
+
+ #flash{
+   float: right;
+ }
+
+ #odin-test{
+   margin-top: 50px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .notification{
+   padding: 1rem;
+ }
+
+ table { 
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  border-left: 0;
+  border-radius: 4px;
+  border-spacing: 0px;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border-collapse: separate;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+th, td {
+  padding: 5px 4px 6px 4px; 
+  text-align: left;
+  vertical-align: top;
+  border-left: 1px solid #ddd;    
+}
+td {
+  border-top: 1px solid #ddd;    
+}
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+  border-radius: 4px 0 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 4px;
+}
+
+.title.is-5{
+  color: black;
+}
+
+#booking-column{
+  border: solid yellow 1px;
+}

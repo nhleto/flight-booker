@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </head>
 
 <body>
@@ -16,21 +17,37 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <%= image_tag  "flight2.png", size: '64x64', alt: 'flight logo'  %>
-      <div class="navbar-item"><h3 class="title is-3" id = 'logo-text'>Flight Booker</h3></div>
+      <div class="navbar-item">
+        <h3 class="title is-3" id='logo-text'>Flight Booker</h3>
+      </div>
     </div>
   </nav>
 
 
   <% if flash[:notice] %>
+
+  <div class="container" id='odin-test'>
     <div class="notification is-primary is-light">
-      <button class="delete"></button>
-      <p class="notice"><%= notice %></p>
+      <p class="notice">
+      <%= notice %>
+      <button class="delete" id='flash'></button>
+      </p>
     </div>
+  </div>
+
   <% end %>
+
   <% if flash[:alert] %>
-    <div class="notification is-danger is-light">
-      <p class="notice"><%= alert %></p>
+
+    <div class="container" id='odin-test'>
+      <div class="notification is-danger is-light">
+        <p class="notice">
+        <%= alert %>
+        <button class="delete" id='flash'></button>
+        </p>
+      </div>
     </div>
+
   <% end %>
 
   <%= yield %>
