@@ -17,10 +17,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   (document.querySelectorAll('.container .notification .delete') || []).forEach(($delete) => {
-    let $notification = $delete.parentNode;
+    let $notification = $delete.parentNode.parentNode;
 
     $delete.addEventListener('click', () => {
       $notification.parentNode.removeChild($notification);
     });
   });
 });
+

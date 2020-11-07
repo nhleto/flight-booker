@@ -42,11 +42,14 @@
         <% end %>
 
         <div class='has-text-centered'>
-          <%= f.submit 'Book', class: 'button is-medium', id: 'button' %>
+          <%= f.submit 'Book', class: 'button is-medium' %>
         </div>
 
         <% end %>
       </ul>
+      
+      <% else %>
+        <p style='color:#e76f51; font-size:20px'>0 flights found...</p>
       <% end %>
     </div>
   </div>

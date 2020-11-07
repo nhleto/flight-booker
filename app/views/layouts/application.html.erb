@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class='body'>
+<html class='body has-navbar-fixed-top'>
 
 <head>
   <title>FlightBooker</title>
@@ -14,11 +14,18 @@
 
 <body>
 
-  <nav class="navbar">
+  <nav class="navbar is-fixed-top">
     <div class="navbar-brand">
       <%= image_tag  "flight2.png", size: '64x64', alt: 'flight logo'  %>
       <div class="navbar-item">
         <h3 class="title is-3" id='logo-text'>Flight Booker</h3>
+      </div>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <h3 class="title is-3" id='logo-text'><%= link_to 'Home', root_path %></h3>
+        </div>
       </div>
     </div>
   </nav>
@@ -29,8 +36,8 @@
   <div class="container" id='odin-test'>
     <div class="notification is-primary is-light">
       <p class="notice">
-      <%= notice %>
-      <button class="delete" id='flash'></button>
+        <%= notice %>
+        <button class="delete" id='flash'></button>
       </p>
     </div>
   </div>
@@ -39,14 +46,14 @@
 
   <% if flash[:alert] %>
 
-    <div class="container" id='odin-test'>
-      <div class="notification is-danger is-light">
-        <p class="notice">
+  <div class="container" id='odin-test'>
+    <div class="notification is-danger is-light">
+      <p class="notice">
         <%= alert %>
         <button class="delete" id='flash'></button>
-        </p>
-      </div>
+      </p>
     </div>
+  </div>
 
   <% end %>
 
