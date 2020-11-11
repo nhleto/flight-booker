@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     if @booking.save
       flash[:notice] = 'Booking successfully saved'
+      PassengerMailer.with(booking: @booking).thank_you_email.deliver_now
       redirect_to booking_path(@booking)
     else
       flash[:alert] = 'Invalid booking information'
