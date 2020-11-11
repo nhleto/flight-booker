@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
-    <h2 class="title is-2">Thank you for booking your flight with us, <%= @passengers.name %></h2>
+    <h2 class="title is-2">Thank you for booking your flight with us, <%= @passengers.map(&:name) %></h2>
     <p>To view your tickets, follow this link <%= @url %></p>
     <p>Have a great day!</p>
     <script src="" async defer></script>
